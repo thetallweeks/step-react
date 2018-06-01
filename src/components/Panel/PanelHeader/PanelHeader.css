@@ -1,0 +1,21 @@
+.PanelHeader {
+  color: #5D5D5D;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #C8C8C8;
+  padding: 7px 20px;
+}
+
+.PanelHeader-args span:before {
+  content: '|';
+  margin: 0 10px;
+}
+
+.PanelHeader-args span:first-child:before {
+  content: ''
+}
+
+.PanelHeader-actions svg {
+  cursor: pointer;
+  margin-left: 15px;
+}

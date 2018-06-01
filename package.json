@@ -1,0 +1,38 @@
+{
+  "name": "step-react",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "NODE_ENV=development mocha",
+    "test-watch": "npm test -- --watch",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/react-fontawesome": "^0.0.20",
+    "history": "^4.7.2",
+    "lodash": "^4.17.10",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "1.1.4"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-preset-react-app": "^3.1.1",
+    "chai": "^4.1.2",
+    "enzyme": "^3.3.0",
+    "mocha": "^5.2.0",
+    "prop-types": "^15.6.1"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      "transform-es2015-modules-commonjs"
+    ]
+  }
+}

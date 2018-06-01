@@ -1,0 +1,25 @@
+.App {
+  text-align: left;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-panels {
+  display: flex;
+}
+
+.App-panels > div {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

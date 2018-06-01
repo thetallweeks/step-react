@@ -1,0 +1,4 @@
+src/**/*.test.js
+--recursive
+--compilers js:babel-register
+--require test/dom.js
