@@ -1,14 +1,11 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import router from './utils/router';
-import api from './utils/api';
 import Header from './components/Header';
-import Panel from './components/Panel';
+import Panels from './components/Panels';
 import './App.css';
-import get from 'lodash/get';
-import forEach from 'lodash/forEach';
 
-// TODO: For performanc only add icons that are used
+// TODO: For performance only add icons that are used
 // https://github.com/FortAwesome/react-fontawesome#build-a-library-to-reference-icons-throughout-your-app-more-conveniently
 import '@fortawesome/fontawesome-free-solid';
 
@@ -25,24 +22,6 @@ class App extends Component {
 
   componentDidMount() {
     router.listen(this.handleNav);
-
-    const refsFromUrl = router.parseSearch(this.state.search);
-
-    try {
-      forEach(refsFromUrl, async (value) => {
-        const reference = get(value, 'ref') || 'Gen.1';
-        const data = await api.get(`/search/masterSearch/reference=${reference}/VNHUG?lang=en`);
-        this.updateStore(data);
-      });
-    }
-    catch (err) {
-      console.log(err);
-    }
-  }
-
-  getOsisId(panelIndex) {
-    const refFromUrl = router.parseSearch(this.state.search);
-    return get(refFromUrl, [`p${panelIndex}`, 'ref']) || 'Gen.1';
   }
 
   handleNav = ({pathname, search}) => {
@@ -57,18 +36,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-        <div className="App-panels">
-          <Panel
-            index={0}
-            reference={get(this.state.data, this.getOsisId(0))}
-            updateStore={this.updateStore}
-          />
-          <Panel
-            index={1}
-            reference={get(this.state.data, this.getOsisId(1))}
-            updateStore={this.updateStore}
-          />
-        </div>
+        <Panels data={this.state.data} updateStore={this.updateStore}/>
       </div>
     );
   }

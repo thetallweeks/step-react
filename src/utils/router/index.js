@@ -2,7 +2,6 @@ import chunk from 'lodash/chunk';
 import compact from 'lodash/compact';
 import get from 'lodash/get';
 import map from 'lodash/map';
-import parseInt from 'lodash/parseInt';
 import reduce from 'lodash/reduce';
 import startsWith from 'lodash/startsWith';
 
@@ -13,12 +12,9 @@ import mapValues from 'lodash/fp/mapValues';
 import {setIn} from '../immutable';
 
 import history from '../history';
+import {indexFromKey} from '../panels';
 
 const argDelimeter = '!';
-
-function indexFromKey(key = 'p0') {
-  return parseInt(key.replace('p', ''));
-}
 
 function ensureValidSearch(_search = '') {
   let search = _search;

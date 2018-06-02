@@ -4,8 +4,8 @@ import Icon from '@fortawesome/react-fontawesome';
 import './PanelHeader.css';
 import get from 'lodash/get';
 import map from 'lodash/map';
-import router from '../../../utils/router';
-import api from '../../../utils/api';
+import router from '../../../../utils/router';
+import api from '../../../../utils/api';
 
 function onClickSiblingChapter(chapter, panelIndex, updateStore) {
   const newRef = get(chapter, 'osisKeyId');
