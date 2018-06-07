@@ -1,4 +1,4 @@
-const prefix = 'http://localhost:9000/rest';
+const prefix = '/rest';
 
 function _get(url, options) {
   return fetch(`${prefix}${url}`, options)

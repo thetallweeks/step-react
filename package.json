@@ -35,5 +35,6 @@
     "plugins": [
       "transform-es2015-modules-commonjs"
     ]
-  }
+  },
+  "proxy": "http://dev.stepbible.org"
 }
